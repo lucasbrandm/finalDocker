@@ -7,3 +7,8 @@ services:
   redis:
 
   stedi:
+    image: imageName
+    ports:
+    enviroment:
+    depends_on:
+    - "redis"
