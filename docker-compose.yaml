@@ -3,6 +3,12 @@ services:
   zookeeper:
 
   kafka:
+    depends_on:
+    image: confluentinc/cp-kafka:5.5.1
+    container_name: kafka
+    restart: unless-stopped
+    expose:
+    environment:
 
   redis:
 
