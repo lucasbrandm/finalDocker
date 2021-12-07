@@ -1,11 +1,29 @@
 version: '3.7'
 services:
   zookeeper:
-
+   image: confluentinc/cp-zookeeper:5.2.2
+   container_name: "zookeeper"
+   ports:
+    -"2181:2181"
+   restart: unless-stopped
+   environment:
+    ZOOKEEPER_CLIENT_PORT: "2181"
   kafka:
 
   redis:
     image: redis:6.0.6
     ports:
      - "6379:6379"  #hope this works well
+
   stedi:
+    image: scmurdock/stedi
+    ports: 
+    - "4567:4567"  
+    enviroment:
+      REDIS_HOST: "redis"
+      REDIS_PORT: "6379"
+      REDIS_DB: 0
+      KAFKA_BROKER: "kafka:19092"
+      KAFKA_RISK_TOPIC: "customer-risk-topic"
+    depends_on:
+    - "redis"
