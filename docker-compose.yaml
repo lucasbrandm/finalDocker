@@ -11,7 +11,7 @@ services:
 
   kafka:
     depends_on:
-      - "stedi"
+      - "zookeeper"
     image: confluentinc/cp-kafka:5.5.1
     container_name: kafka
     expose:
