@@ -4,10 +4,10 @@ services:
    image: confluentinc/cp-zookeeper:5.2.2
    container_name: "zookeeper"
    ports:
-   - "2181:2181"
+    -"2181:2181"
+   restart: unless-stopped
    environment:
     ZOOKEEPER_CLIENT_PORT: "2181"
-    restart: unless-stopped
   kafka:
 
   redis:
