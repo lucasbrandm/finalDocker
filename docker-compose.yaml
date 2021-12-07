@@ -12,8 +12,10 @@ services:
 
   redis:
     image: redis:6.0.6
-    ports:
-     - "6379:6379"  #hope this works well
+    container_name: "redis"
+    restart: unless_stopped
+    expose:
+      - "6379"  #hope this works well
 
   stedi:
     image: scmurdock/stedi
