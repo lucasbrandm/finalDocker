@@ -1,10 +1,19 @@
 version: '3.7'
 services:
   zookeeper:
+   image: confluentinc/cp-zookeeper:5.2.2
+   ports:
 
+   - "2181:2181"
+   environment:
+
+    ZOOKEEPER_CLIENT_PORT: "2181"
   kafka:
 
   redis:
+    image: redis:6.0.6
+    ports:
+     - "6379:6379"
 
   stedi:
     image: scmurdock/stedi
