@@ -27,3 +27,4 @@ services:
       KAFKA_RISK_TOPIC: "customer-risk-topic"
     depends_on:
     - "redis"
+    - "kafka"
