@@ -14,8 +14,8 @@ services:
       - "zookeeper"
     image: confluentinc/cp-kafka:5.5.1
     container_name: kafka
-    expose:
-      - "19092"
+    ports:
+      - "19091:19092"
     environment:
       KAFKA_BROKER_ID: "0"
       KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2180"
