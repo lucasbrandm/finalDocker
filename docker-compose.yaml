@@ -14,4 +14,16 @@ services:
     image: redis:6.0.6
     ports:
      - "6379:6379"
+
   stedi:
+    image: scmurdock/stedi
+    ports: 
+    - "4567:4567"  
+    enviroment:
+      REDIS_HOST: "redis"
+      REDIS_PORT: "6379"
+      REDIS_DB: 0
+      KAFKA_BROKER: "kafka:19092"
+      KAFKA_RISK_TOPIC: "customer-risk-topic"
+    depends_on:
+    - "redis"
