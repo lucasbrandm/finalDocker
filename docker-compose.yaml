@@ -36,7 +36,7 @@ services:
     image: scmurdock/stedi
     ports: 
     - "4567:4567"  
-    enviroment:
+    environment:
       REDIS_HOST: "redis"
       REDIS_PORT: "6379"
       REDIS_DB: 0
