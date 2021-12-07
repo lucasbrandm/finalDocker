@@ -5,6 +5,9 @@ services:
    ports:
 
    - "2181:2181"
+   environment:
+
+    ZOOKEEPER_CLIENT_PORT: "2181"
   kafka:
 
   redis:
